@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Contacts" representedClassName="Contacts" syncable="YES">
+        <attribute name="cellphoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heightInMM" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipContactOrders" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Orders" inverseName="relationshipOrderContact" inverseEntity="Orders" syncable="YES"/>
+    </entity>
+    <entity name="Orders" representedClassName="Orders" syncable="YES">
+        <attribute name="dateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="orderComplete" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="orderDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="orderTotal" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="shippingDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipOrderContact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contacts" inverseName="relationshipContactOrders" inverseEntity="Contacts" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Contacts" positionX="79" positionY="207" width="128" height="208"/>
+        <element name="Orders" positionX="403" positionY="189" width="128" height="163"/>
+    </elements>
+</model>
